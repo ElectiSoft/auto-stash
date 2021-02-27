@@ -1,0 +1,12 @@
+{
+  "name": "auto-stash",
+  "version": "1.0.0",
+  "main": "index.js",
+  "repository": "https://github.com/ElectiSoft/auto-stash.git",
+  "author": "Electimore <61228588+Electimore@users.noreply.github.com>",
+  "license": "MIT",
+  "dependencies": {
+    "furazy": "^0.2.0",
+    "image-downloader": "^4.0.2"
+  }
+}
