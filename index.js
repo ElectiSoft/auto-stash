@@ -1,16 +1,15 @@
-const Furazy = require("furazy")
-const Furry = new Furazy()
- 
-const searchIt = async () => {
+const e621 = new (require(`e621-api-wrapper`)).e621("auto-stash", {base_url: "https://e926.net" });
+const download = require(`image-downloader`)
 
-  let searchResult = await Furry.searchImage(
-    "eevee",      //[String]name (search keywords)
-    2,            //[Int]type, 0: e621.net，1: fa, 2: e926.net
-    1,            //[Int]page
-    1             //[Int]limit
-  )
-  console.log(searchResult)
+getImages = async (tags) => {
+  tags = tags.concat(" rating:safe")
+  console.log(tags)
+  let images = await e621.postsList({tags})
 
+  console.log(images.data.posts)
+
+  for (let i = 0; i < 3; i++) {
+    download.image({url: images.data.posts[i].file.url, dest: "./images"})
+  }
 }
-
-searchIt()
+getImages("wolf")

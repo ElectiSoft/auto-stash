@@ -6,7 +6,7 @@
   "author": "Electimore <61228588+Electimore@users.noreply.github.com>",
   "license": "MIT",
   "dependencies": {
-    "furazy": "^0.2.0",
+    "e621-api-wrapper": "^1.0.2",
     "image-downloader": "^4.0.2"
   }
 }
