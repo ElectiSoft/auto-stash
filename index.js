@@ -16,11 +16,12 @@ fs.readdir(dir, (err, files) => {
 });
 
 getImages = async (tags, count) => {
-  tags = tags.concat(" rating:safe -presenting -topless -meme -text -<3 -spooning -pregnant -vore -octopus -naked -bulge -poppy's69") //Advanced safe-search. Don't even ask. We hurt our eyes so you don't have to. 90% effective-ish maybe.
-  let images = await e621.postsList({tags})
-
+  tags = tags.concat(" rating:safe -presenting -topless -meme -text -<3 -spooning -pregnant -vore -octopus -naked -bulge -poppy's69 -diaper ") //Advanced safe-search. Don't even ask. We hurt our eyes so you don't have to. 90% effective-ish maybe.
+  let images = await e621.postsList({tags, limit: count})
   for (let i = 0; i < count; i++) {
-    download.image({url: images.data.posts[i].file.url, dest: "./images"})
+    if(images.data.posts[i].file.url){
+      download.image({url: images.data.posts[i].file.url, dest: "./images"});
+    }
   }
 }
 
