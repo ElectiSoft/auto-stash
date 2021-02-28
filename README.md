@@ -1,3 +1,3 @@
 # auto-stash
 
-Simple e926 image downloader.
+Simple DeviantArt image downloader.
