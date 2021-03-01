@@ -1,5 +1,5 @@
-const health_controller = require('./deviant.js')
+const downloadImages = require('./deviant.js')
 const parser = require('./parseArgs.js')
+const args = parser.parse_args()
 
-health_controller("wolf furry", 10, "popular", "./images")
-
+downloadImages(args.search, args.count, args.sort, args.dir)
