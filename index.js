@@ -16,12 +16,12 @@ fs.readdir(dir, (err, files) => {
 });
 
 getImages = async (tags, count) => {
-  tags = tags.concat(" rating:safe -presenting -topless -meme -text -<3 -spooning -pregnant -vore -octopus -naked -bulge -poppy's69 -diaper ") //Advanced safe-search. Don't even ask. We hurt our eyes so you don't have to. 90% effective-ish maybe.
-  let images = await e621.postsList({tags, limit: count})
+  tags = tags.concat(" rating:safe -presenting -topless -meme -text -<3 -spooning -pregnant -vore -octopus -naked -bulge -poppy's69 -diaper "); //Advanced safe-search. Don't even ask. We hurt our eyes so you don't have to. 90% effective-ish maybe.
+  let images = await e621.postsList({tags, limit: count});
   let errors = 0;
   const downloads = [];
   if(count > 200){
-    console.log(`${count} is bigger than 200! try again!`)
+    console.log(`${count} is bigger than 200! try again!`);
     return;
   }
   for (let i = 0; i < count; i++) {
@@ -29,12 +29,12 @@ getImages = async (tags, count) => {
       downloads.push(download.image({url: images.data.posts[i].file.url, dest: "./images"}));
     }
     else{
-      console.log(`Image number ${i+1} could not be downloaded.`)
+      console.error(`Image number ${i+1} could not be downloaded.`);
       errors += 1;
     }
   }
   await Promise.all(downloads);
-  console.log(`Done! Downloaded ${count-errors} images. ${errors ? errors + " images could not be downloaded.":""}`)
+  console.log(`Done! Downloaded ${count-errors} images. ${errors ? errors + " images could not be downloaded.":"No errors (yay!)."}`);
   return;
 }
 
