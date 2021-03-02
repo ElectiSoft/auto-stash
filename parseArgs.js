@@ -3,7 +3,6 @@ const { version } = require('../package.json')
  
 const parser = new ArgumentParser({})
 
-parser.add_argument('-d', '--delete', { help: 'delete all the other files in the destination folder', action: 'store_true' })
 parser.add_argument('-v', '--version', { action: 'version', version })
 parser.add_argument('-s', '--search', { help: 'search term for deviantart', required: true})
 parser.add_argument('-c', '--count', { help: 'number of photos you want to download', default: 1 })

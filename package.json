@@ -6,7 +6,6 @@
   "author": "Electimore <61228588+Electimore@users.noreply.github.com>",
   "license": "MIT",
   "dependencies": {
-    "argparse": "^2.0.1",
     "deviantart.ts": "^0.2.6",
     "dotenv": "^8.2.0",
     "image-downloader": "^4.0.2",
