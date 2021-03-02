@@ -2,16 +2,27 @@
 
 Simple DeviantArt image downloader.
 
-## Usage
+## Install
+
+```sh
+git clone https://github.com/ElectiSoft/auto-stash
+cd auto-stash
+yarn # or npm install (install dependencies)
 ```
-index.js [-h/--help] [-d/--clear] [-v/--version] -s/--search SEARCH [-c/--count COUNT] [--sort SORT] [--dir DIR]
+
+## Usage
+
+```
+yarn start [optional arguments] -s/--search SEARCH
+
+required arguments:
+  -s SEARCH, --search SEARCH
+                        search term for deviantart
 
 optional arguments:
   -h, --help            show this help message and exit
   -d, --clear           delete all the other files in the destination folder
   -v, --version         show program's version number and exit
-  -s SEARCH, --search SEARCH
-                        search term for deviantart
   -c COUNT, --count COUNT
                         number of photos you want to download
   --sort SORT           sorting method (popular/newest)
@@ -19,6 +30,7 @@ optional arguments:
 ```
 
 ## Example
+
 ```
-index.js -s "wolf" -c 10 --sort "popular" --dir "./images"
+yarn start -s "wolf" -c 10 --sort "popular" --dir "./images"
 ```

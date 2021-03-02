@@ -1,14 +1,18 @@
 {
   "name": "auto-stash",
   "version": "1.0.0",
-  "main": "index.js",
+  "main": "src/index.js",
   "repository": "https://github.com/ElectiSoft/auto-stash.git",
   "author": "Electimore <61228588+Electimore@users.noreply.github.com>",
   "license": "MIT",
   "dependencies": {
+    "argparse": "^2.0.1",
     "deviantart.ts": "^0.2.6",
     "dotenv": "^8.2.0",
     "image-downloader": "^4.0.2",
     "input": "^1.0.1"
+  },
+  "scripts": {
+    "start": "node ."
   }
 }
