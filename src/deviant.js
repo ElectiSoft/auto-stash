@@ -3,7 +3,6 @@ const download = require(`image-downloader`)
 const fs = require('fs')
 const path = require('path')
 const deviantart = require('deviantart.ts')
-const { count } = require('console')
 
 function clearDir(dir){
   fs.readdir(dir, (err, files) => {
